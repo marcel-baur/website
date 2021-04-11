@@ -2,7 +2,7 @@
     <div class="toggle" @click="toggleTheme">{{isDark? "💡" : "🌑"}}</div>
 
   <div class="container">
-  <img alt="MB" src="./assets/Logo-clear.svg" />
+  <img alt="MB" src="./assets/g.svg" />
   <Main msg="I'm Marcel Baur" />
 </div>
 </template>

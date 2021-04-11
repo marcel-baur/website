@@ -59,7 +59,8 @@ h2 {
 }
 
 a {
-  color: #f98125
+  /* color: #f98125; */
+  color: rgb(140, 198, 63);
 }
 
 label {
