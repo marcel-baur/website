@@ -1,5 +1,8 @@
 <template>
-    <div class="toggle" @click="toggleTheme">{{isDark? "💡" : "🌑"}}</div>
+    <div class="toggle" @click="toggleTheme">
+       <img v-if="isDark" class='darkmode-icon' alt="MB" src="./assets/off.svg" />
+       <img v-if="!isDark" class='darkmode-icon' alt="MB" src="./assets/on.svg" />
+       </div>
 
   <div class="container">
   <img alt="MB" src="./assets/g.svg" />
@@ -11,6 +14,14 @@
 import { defineComponent } from 'vue'
 import Main from './components/Main.vue'
 import themeChanger from './theme';
+
+const routes = [
+  { path: '/', component: Main },
+  { path: '/projects', component: Main },
+];
+
+// @ts-ignore
+
 
 export default defineComponent({
   name: 'App',
@@ -36,6 +47,9 @@ export default defineComponent({
 </script>
 
 <style>
+  :root{
+  --icon-size: 24px;
+ } 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -60,5 +74,11 @@ img {
   align-items: center;
   justify-content: center;
   padding: 12px;
+}
+.darkmode-icon {
+  height: var(--icon-size);
+  width: var(--icon-size);
+  max-height: var(--icon-size);
+  max-width: var(--icon-size);
 }
 </style>
